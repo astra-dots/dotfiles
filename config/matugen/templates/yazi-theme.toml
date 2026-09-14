@@ -1,0 +1,13 @@
+[mode]
+normal_main = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.primary_fixed.default.hex}}", bold = true }
+normal_alt  = { fg = "{{colors.primary_fixed.default.hex}}", bg = "{{colors.surface_container_highest.default.hex}}" }
+
+select_main = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.error.default.hex}}", bold = true }
+select_alt  = { fg = "{{colors.error.default.hex}}", bg = "{{colors.surface_container_highest.default.hex}}" }
+
+unset_main  = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.tertiary_fixed.default.hex}}", bold = true }
+unset_alt   = { fg = "{{colors.tertiary_fixed.default.hex}}", bg = "{{colors.surface_container_highest.default.hex}}" }
+
+[status]
+progress_label  = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.primary_fixed.default.hex}}", bold = true }
+progress_normal = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.primary_fixed.default.hex}}" }

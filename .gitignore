@@ -1,0 +1,40 @@
+# Backups and temporary files
+*.bak
+*.old
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs and histories
+*.log
+*history*
+.bash_history
+.zsh_history
+
+# Secrets, keys, and tokens
+*.pem
+*.key
+*.pub
+*id_rsa*
+*id_ed25519*
+*token*
+*secret*
+.env
+.env.*
+
+# Build artifacts and caches
+build/
+bin/
+obj/
+node_modules/
+__pycache__/
+.cache/
+*.pyc
+
+# Local system specifics
+desktop-appletsrc
+katemetainfos
+kwritemetainfos

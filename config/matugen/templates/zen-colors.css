@@ -1,0 +1,6 @@
+:root {
+  --zen-colors-bg: {{colors.surface.default.hex}} !important;
+  --zen-colors-sidebar: {{colors.surface_container_lowest.default.hex}} !important;
+  --zen-colors-tertiary: {{colors.primary_container.default.hex}} !important;
+  --zen-colors-accent: {{colors.primary.default.hex}} !important;
+}

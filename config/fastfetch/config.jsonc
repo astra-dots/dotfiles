@@ -1,0 +1,138 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "padding": {
+      "top": 1
+    }
+  },
+
+  "display": {
+    "separator": " ",
+    "percent": {
+      "type": 9,
+      "color": {
+        "green": "92",
+        "yellow": "93",
+        "red": "91"
+      }
+    },
+    "constants": [
+      "\u001b[90m│                                                            │\u001b[60D\u001b[39m"
+    ]
+  },
+
+  "modules": [
+    {
+      "type": "command",
+      "key": " ",
+      "shell": "/bin/bash",
+      "param": "-lc",
+      "text": "g=('Hello' 'Hey' 'Hi' 'Greetings' 'Welcome'); h=$(date +%H); if ((h<12)); then g+=('Good morning'); elif ((h<17)); then g+=('Good afternoon'); else g+=('Good evening'); fi; printf '%s' \"${g[RANDOM % ${#g[@]}]}\"",
+      "format": " {#97}{result},{#} {#1;36}Anirudh{#}!"
+    },
+
+    "break",
+
+    {
+      "type": "custom",
+      "key": "{#90}╭ Keys ───────╮",
+      "format": "{#90}╭ Values ────────────────────────────────────────────────────╮"
+    },
+
+    {
+      "type": "title",
+      "key": "{#90}│ {#92}User        {#90}│",
+      "format": "{$1}{user-name}@{host-name}"
+    },
+    {
+      "type": "os",
+      "key": "{#90}│ {#94}OS          {#90}│",
+      "format": "{$1}{pretty-name}"
+    },
+    {
+      "type": "board",
+      "key": "{#90}│ {#94}Board       {#90}│",
+      "format": "{$1}MSI B760-P PRO WIFI DDR4  {#90}[MS-7D98]{#}"
+    },
+    {
+      "type": "kernel",
+      "key": "{#90}│ {#94}Kernel      {#90}│",
+      "format": "{$1}{sysname}  {#90}[v{release}]{#}"
+    },
+
+    {
+      "type": "de",
+      "key": "{#90}│ {#96}DE          {#90}│",
+      "format": "{$1}{pretty-name}{?version}  {#90}[{version}]{#}{?}"
+    },
+    {
+      "type": "terminal",
+      "key": "{#90}│ {#96}Terminal    {#90}│",
+      "format": "{$1}{pretty-name}{?version}  {#90}[{version}]{#}{?}"
+    },
+    {
+      "type": "shell",
+      "key": "{#90}│ {#96}Shell       {#90}│",
+      "format": "{$1}{pretty-name}{?version}  {#90}[v{version}]{#}{?}"
+    },
+
+    {
+      "type": "cpu",
+      "key": "{#90}│ {#93}CPU         {#90}│",
+      "showPeCoreCount": true,
+      "temp": true,
+      "format": "{$1}Intel Core i5-12400F{?temperature}  {#90}[{temperature}{#90}]{#}{?}{?freq-max}  {#90}[{freq-max}]{#}{?}"
+    },
+    {
+      "type": "gpu",
+      "key": "{#90}│ {#93}GPU         {#90}│",
+      "detectionMethod": "auto",
+      "driverSpecific": true,
+      "temp": true,
+      "format": "{$1}{name}{?temperature}  {#90}[{temperature}{#90}]{#}{?}{?dedicated-used}  {#90}[{dedicated-used}]{#}{?}"
+    },
+    {
+      "type": "memory",
+      "key": "{#90}│ {#93}Memory      {#90}│",
+      "format": "{$1}{used} / {total}  {#90}[{#}{percentage}{#90}]{#}"
+    },
+    {
+      "type": "disk",
+      "key": "{#90}│ {#93}Disk        {#90}│",
+      "format": "{$1}{size-used} / {size-total}  {#90}[{#}{size-percentage}{#90}]{#}"
+    },
+
+    {
+      "type": "datetime",
+      "key": "{#90}│ {#97}Datetime    {#90}│",
+      "format": "{$1}{day-pretty}-{month-pretty}-{year} {hour-12-pretty}:{minute-pretty}:{second-pretty} {am-pm}  {#90}[{#96}{weekday}{#90}]{#}"
+    },
+
+    {
+      "type": "custom",
+      "key": "{#90}╰─────────────╯",
+      "format": "{#90}╰────────────────────────────────────────────────────────────╯"
+    },
+
+    "break",
+
+    {
+      "type": "custom",
+      "key": " ",
+      "format": "{#90}╭ Colors ───────────────────────────────────────────────────────────────────╮"
+    },
+    {
+      "type": "custom",
+      "format": "{#90}│ {#40}    {#41}    {#42}    {#43}    {#44}    {#45}    {#46}    {#47}    {#}                                          {#90}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#90}│ {#100}    {#101}    {#102}    {#103}    {#104}    {#105}    {#106}    {#107}    {#}                                          {#90}│"
+    },
+    {
+      "type": "custom",
+      "format": "{#90}╰───────────────────────────────────────────────────────────────────────────╯"
+    }
+  ]
+}

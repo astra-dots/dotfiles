@@ -1,0 +1,213 @@
+/* ======================================================
+   Clean UI Snippet for Spicetify
+   Compatible with Lucid, Hazy, Sleek & Marketplace Themes
+   ====================================================== */
+
+/* 1. Remove "Go Back" and "Go Forward" buttons */
+.main-topBar-historyButtons button,
+.main-topBar-backButton,
+.main-topBar-forwardButton,
+button[aria-label="Go back"],
+button[aria-label="Go Back"],
+button[aria-label="Go forward"],
+button[aria-label="Go Forward"] {
+  display: none !important;
+}
+
+/* 2. Remove "What's New" button */
+button[aria-label="What's New"],
+button[aria-label="What's new"],
+a[href="/feed"] {
+  display: none !important;
+}
+
+/* 3. Remove "Listening Activity" / "Friend Activity" button */
+button[aria-label="Friend Activity"],
+button[aria-label="Friend activity"],
+button[aria-label="Listening Activity"],
+button[aria-label="Listening activity"],
+button[data-testid="buddy-feed-button"],
+button[data-id="buddy-feed"],
+.main-topBar-buddyFeed {
+  display: none !important;
+}
+
+/* 4. Remove default "Lyrics" button (keeping Spicy Lyrics) */
+button[aria-label="Lyrics"],
+button[data-testid="lyrics-button"] {
+  display: none !important;
+}
+
+/* 5. Remove Playlist Download button */
+.x-downloadButton-button,
+button[aria-label*="Download"],
+button[aria-label*="download"],
+button[data-testid="download-button"] {
+  display: none !important;
+}
+
+/* 6. Ultra-thin modern 3px scrollbars */
+::-webkit-scrollbar {
+  width: 3px !important;
+  height: 3px !important;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+.os-theme-spotify.os-host-transition > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle,
+.os-scrollbar-handle {
+  border-radius: 10px !important;
+  width: 3px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 7. Hide Side Panel completely when closed & disable hover peek/indicators
+      (Prevents side panel from popping up on hover, while Queue button still works) */
+.Root__right-sidebar-hover-indicator,
+[data-testid="right-sidebar-hover-area"],
+.Root__right-sidebar:has(div[aria-hidden="true"]),
+.Root__right-sidebar > div[aria-hidden="true"],
+.Root__right-sidebar:empty,
+aside[aria-label="Now playing view"][aria-hidden="true"],
+aside[aria-label="Right sidebar"][aria-hidden="true"] {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ensure active side panel (e.g. Queue or Now Playing view when toggled on) is fully visible */
+.Root__right-sidebar:not(:has(div[aria-hidden="true"])):not(:empty) {
+  display: flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* 8. Ensure Panel Close (X) button is visible when sidebar is open */
+[aria-label="Close"],
+button[aria-label="Close"],
+button[data-testid="right-sidebar-close-button"] {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 9. Ensure Lucid Settings button is clickable */
+button[aria-label="Lucid Settings"],
+.Root__globalNav button[aria-label="Lucid Settings"] {
+  app-region: no-drag !important;
+  pointer-events: auto !important;
+}
+
+/* 10. Playback Bar & Progress Bar Alignment Fix
+       - Fixes time label gap asymmetry (equal spacing on left and right)
+       - Expands progress bar line to fill full width symmetrically
+       - Fixes progress bar getting cut off in Spicy Lyrics / Now Playing views */
+.playback-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 8px !important;
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+.main-nowPlayingBar-nowPlayingBar:nth-last-child(2) .playback-bar {
+  bottom: auto !important;
+  position: relative !important;
+}
+
+.playback-bar__progress-time-elapsed,
+.main-playbackBarRemainingTime-container,
+[data-testid="playback-position"],
+[data-testid="playback-duration"] {
+  min-width: 40px !important;
+  width: auto !important;
+  max-width: 50px !important;
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  position: static !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  z-index: auto !important;
+  font-variant-numeric: tabular-nums !important;
+  line-height: 1 !important;
+}
+
+.playback-bar__progress-time-elapsed,
+[data-testid="playback-position"] {
+  text-align: right !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.main-playbackBarRemainingTime-container,
+[data-testid="playback-duration"] {
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.playback-bar > .playback-progressbar,
+.playback-bar > div:not(.playback-bar__progress-time-elapsed):not(.main-playbackBarRemainingTime-container):not([data-testid="playback-position"]):not([data-testid="playback-duration"]) {
+  flex: 1 1 auto !important;
+  flex-grow: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.playback-bar .progress-bar,
+.playback-bar .x-progressBar-progressBarBg,
+.playback-bar .x-progressBar-sliderArea,
+.playback-progressbar .progress-bar,
+.playback-progressbar .x-progressBar-progressBarBg {
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.main-nowPlayingBar-center,
+.player-controls {
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+}
+
+/* 11. Upcoming Song Popup (Next Song Card) — reveal only on hover without changing dimensions */
+.next-playing-card {
+  opacity: 0 !important;
+  pointer-events: auto !important;
+  transition: opacity 0.25s ease-in-out !important;
+}
+
+/* Reveal when hovering over its location or the bottom-left player/track area */
+.next-playing-card:hover,
+#player-next-song-root:hover .next-playing-card,
+.Root__now-playing-bar:has(.main-nowPlayingBar-left:hover) .next-playing-card,
+.main-nowPlayingBar-container:has(.main-nowPlayingBar-left:hover) .next-playing-card,
+.main-nowPlayingBar-left:hover ~ #player-next-song-root .next-playing-card {
+  opacity: 1 !important;
+}

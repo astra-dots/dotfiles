@@ -1,0 +1,164 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Base is adamnejm simple (first config: https://github.com/starship/starship/discussions/1107?sort=top#discussioncomment-10932940) + extended pills from Gaurav-Gosain (second config: https://github.com/starship/starship/discussions/1107?sort=top#discussioncomment-11666645)
+# Removed: $os (Arch logo pill) and $time (timestamp pill)
+# Paths: full paths (truncation_length = 0, truncate_to_repo = false)
+# Some modifications are made by me, AnonSpud (https://github.com/AnAnonymousPotato), with the help of AI
+
+palette = "matugen"
+# Keep false if you want spacing only via zshrc hook (prevents double blank lines)
+# Set to true if you want Starship itself to add a blank line
+add_newline = false
+
+format = """
+[╭](fg:separator)\
+$status\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$golang\
+$nodejs\
+$bun\
+$deno\
+$python\
+$java\
+$zig\
+$rust\
+$c\
+$cmd_duration\
+$username\
+$line_break\
+[╰](fg:separator)\
+$character\
+"""
+
+[palettes.matugen]
+foreground = "{{colors.on_surface.default.hex}}"
+background = "{{colors.surface.default.hex}}"
+current_line = "{{colors.surface_variant.default.hex}}"
+primary = "{{colors.background.default.hex}}"
+box = "{{colors.surface_container.default.hex}}"
+icon = "{{colors.background.default.hex}}"
+separator = "{{colors.surface_variant.default.hex}}"
+
+blue = "{{colors.primary.default.hex}}"
+cyan = "{{colors.secondary.default.hex}}"
+green = "{{colors.tertiary.default.hex}}"
+orange = "{{colors.secondary_fixed.default.hex}}"
+pink = "{{colors.primary_fixed.default.hex}}"
+purple = "{{colors.tertiary_fixed.default.hex}}"
+red = "{{colors.error.default.hex}}"
+yellow = "{{colors.tertiary_fixed_dim.default.hex}}"
+
+directory = "{{colors.primary.default.hex}}"
+duration = "{{colors.secondary.default.hex}}"
+status = "{{colors.error.default.hex}}"
+prompt_ok = "{{colors.primary.default.hex}}"
+prompt_err = "{{colors.error.default.hex}}"
+
+###########################################
+# MODULES
+###########################################
+
+[character]
+success_symbol = "[❯](fg:prompt_ok)"
+error_symbol = "[❯](fg:prompt_err)"
+# no extra format, prompt line already has ╰
+
+[status]
+format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:box)[ $status](fg:foreground bg:box)[](fg:box)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:box)[ $pipestatus](fg:foreground bg:box)[](fg:box)"
+disabled = false
+
+[directory]
+format = "[─](fg:separator)[](fg:directory)[](fg:icon bg:directory)[](fg:directory bg:box)[ $path](fg:foreground bg:box)[](fg:box)"
+truncate_to_repo = false
+truncation_length = 0
+
+[git_branch]
+
+format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)"
+symbol = " "
+
+[git_status]
+format = "[$all_status](fg:foreground bg:box)[](fg:box)"
+conflicted = " ="
+up_to_date = ""
+untracked = " ?${count}"
+stashed = " $"
+modified = " !${count}"
+staged = " +"
+renamed = " »"
+deleted = " ✘"
+ahead = " ⇡${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+behind = " ⇣${count}"
+
+[fill]
+symbol = "─"
+style = "fg:current_line"
+
+# --- Language / Tool pills from second config ---
+
+[nodejs]
+format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = "󰎙 Node.js"
+detect_files = ["package.json", ".node-version", "!bunfig.toml", "!bun.lockb"]
+
+[bun]
+format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = " Bun"
+
+[deno]
+format = "[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = " Deno"
+
+[python]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ (${version} )(\($virtualenv\) )](fg:foreground bg:box)[](fg:box)'
+symbol = " python"
+
+[java]
+format = "[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = " Java"
+
+[zig]
+format = "[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = " Zig"
+
+[rust]
+format = "[─](fg:current_line)[](fg:yellow)[$symbol](fg:primary bg:yellow)[](fg:yellow bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = "󱘗 Rust"
+
+[golang]
+format = "[─](fg:current_line)[](fg:cyan)[$symbol](fg:primary bg:cyan)[](fg:cyan bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = "󰟓 Go"
+
+[c]
+format = "[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)"
+symbol = " C"
+
+[cmd_duration]
+format = "[─](fg:separator)[](fg:duration)[󱐋](fg:icon bg:duration)[](fg:duration bg:box)[ $duration](fg:foreground bg:box)[](fg:box)"
+min_time = 1000
+show_milliseconds = false
+disabled = false
+
+[username]
+format = "[─](fg:current_line)[](fg:yellow)[](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) "
+show_always = true
+
+# Disabled pills as requested
+[os]
+disabled = true
+
+[time]
+disabled = true
+
+# Extra safety: ensure no time pill appears via $all
+[profiles]
+transient = """$character"""
+rtransient = """"""

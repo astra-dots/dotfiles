@@ -1,0 +1,45 @@
+color-link default "default"
+color-link comment "brightblack"
+color-link selection "brightwhite,brightblack"
+color-link hlsearch "black,yellow"
+
+color-link identifier "brightgreen"
+color-link identifier.class "brightgreen"
+color-link identifier.var "brightgreen"
+
+color-link constant "yellow"
+color-link constant.number "yellow"
+color-link constant.string "blue"
+
+color-link symbol "cyan"
+color-link symbol.brackets "brightblack"
+color-link symbol.tag "green"
+
+color-link type "green"
+color-link type.keyword "blue"
+
+color-link special "brightblue"
+color-link statement "green"
+color-link preproc "yellow"
+
+color-link underlined "blue"
+color-link error "bold red"
+color-link todo "bold yellow"
+
+color-link diff-added "green"
+color-link diff-modified "yellow"
+color-link diff-deleted "red"
+
+color-link gutter-error "red"
+color-link gutter-warning "yellow"
+
+color-link scrollbar "brightblack"
+color-link statusline "brightwhite"
+color-link tabbar "brightwhite"
+color-link indent-char "brightblack"
+color-link line-number "brightblack"
+color-link current-line-number "brightgreen"
+
+color-link cursor-line ",black"
+color-link color-column "black"
+color-link type.extended "default"

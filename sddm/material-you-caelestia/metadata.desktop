@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=Material-You-Caelestia
+Description=Google Pixel / Material You SDDM theme with Matugen & Monochrome support
+Author=Darkkal44&Kaonaci
+Copyright=(c) 2026
+License=MIT
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+QtVersion=6

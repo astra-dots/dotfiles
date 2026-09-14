@@ -1,0 +1,13 @@
+[mode]
+normal_main = { fg = "#0e0e0e", bg = "#e2e2e2", bold = true }
+normal_alt  = { fg = "#e2e2e2", bg = "#262626" }
+
+select_main = { fg = "#0e0e0e", bg = "#d98883", bold = true }
+select_alt  = { fg = "#d98883", bg = "#262626" }
+
+unset_main  = { fg = "#0e0e0e", bg = "#e5e8eb", bold = true }
+unset_alt   = { fg = "#e5e8eb", bg = "#262626" }
+
+[status]
+progress_label  = { fg = "#0e0e0e", bg = "#e2e2e2", bold = true }
+progress_normal = { fg = "#0e0e0e", bg = "#e2e2e2" }

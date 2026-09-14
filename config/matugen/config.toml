@@ -1,0 +1,84 @@
+# ~/.config/matugen/config.toml
+
+[config]
+# Cache generated schemes for speed
+caching = false
+
+# Color contrast: -1.0 (less) to 1.0 (more)
+contrast = 0
+
+# Pick most dominant color automatically without interactive prompt
+source_color_index = 0
+
+# ============================================
+# TEMPLATES — add each app below
+# ============================================
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "pkill -USR1 kitty || true"
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.micro]
+input_path = '~/.config/matugen/templates/micro.micro'
+output_path = '~/.config/micro/colorschemes/matugen.micro'
+
+[templates.bat]
+input_path = '~/.config/matugen/templates/bat.tmTheme'
+output_path = '~/.config/bat/themes/matugen.tmTheme'
+post_hook = "bat cache --build"
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/your-theme'
+post_hook = 'pkill -USR1 cava || true'
+
+[templates.zen]
+input_path = '~/.config/matugen/templates/zen-colors.css'
+output_path = '~/.zen/o1lwpmgg.Default (release)/chrome/matugen-colors.css'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.fzf]
+input_path = '~/.config/matugen/templates/fzf-colors.zsh'
+output_path = '~/.config/fzf/fzf-colors.zsh'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.mangohud]
+input_path = '~/.config/matugen/templates/mangohud.conf'
+output_path = '~/.config/MangoHud/MangoHud.conf'
+
+[templates.delta]
+input_path = '~/.config/matugen/templates/git-delta.gitconfig'
+output_path = '~/.config/git/delta.gitconfig'
+
+[templates.mpv]
+input_path = '~/.config/matugen/templates/mpv-osc.conf'
+output_path = '~/.config/mpv/script-opts/osc.conf'
+
+[templates.kate]
+input_path = '~/.config/matugen/templates/kate-syntax.theme'
+output_path = '~/.local/share/org.kde.syntax-highlighting/themes/Matugen.theme'
+
+[templates.sddm]
+input_path = '~/.config/matugen/templates/sddm-colors.qml'
+output_path = '~/.local/share/sddm-themes/material-you-caelestia/Colors.qml'
+

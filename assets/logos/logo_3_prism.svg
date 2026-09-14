@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="prismTopLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="prismTopRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="prismBottomLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#0c4a6e" />
+    </linearGradient>
+    <linearGradient id="prismBottomRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="coreRay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="128" fill="#09090b" />
+
+  <!-- Outer Isometric Diamond Shards -->
+  <!-- Top Left Facet -->
+  <polygon points="256,96 128,256 256,256" fill="url(#prismTopLeft)" />
+  <!-- Top Right Facet -->
+  <polygon points="256,96 384,256 256,256" fill="url(#prismTopRight)" />
+  <!-- Bottom Left Facet -->
+  <polygon points="128,256 256,416 256,256" fill="url(#prismBottomLeft)" />
+  <!-- Bottom Right Facet -->
+  <polygon points="384,256 256,416 256,256" fill="url(#prismBottomRight)" />
+
+  <!-- Internal Translucent Diamond Core -->
+  <polygon points="256,160 320,256 256,352 192,256" fill="url(#coreRay)" opacity="0.9" />
+
+  <!-- Surrounding Cardinal Satellite Dots -->
+  <circle cx="256" cy="64" r="6" fill="#38bdf8" />
+  <circle cx="448" cy="256" r="6" fill="#7dd3fc" />
+  <circle cx="256" cy="448" r="6" fill="#0284c7" />
+  <circle cx="64" cy="256" r="6" fill="#38bdf8" />
+</svg>

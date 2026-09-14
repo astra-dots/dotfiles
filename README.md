@@ -2,6 +2,9 @@
 
 A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Caelestia Quickshell desktop shell.
 
+- **Showcase Website & Interactive Simulator**: [https://astra-dots.github.io](https://astra-dots.github.io)
+- **Technical Documentation & Reference**: [https://astra-dots.github.io/docs/](https://astra-dots.github.io/docs/)
+
 ---
 
 ## 1. System Specifications

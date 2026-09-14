@@ -25,20 +25,43 @@ A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Cae
 
 ## 2. Visual Overview
 
-### Desktop Interface (Warm Palette)
-![Desktop Interface with Warm Palette](assets/screenshots/desktop_warm.png)
+### 2.1 Desktop Palettes
+- **Warm Amber Palette:**
+  ![Desktop Interface with Warm Palette](assets/screenshots/desktop_warm.png)
+- **Cool Cyan Palette:**
+  ![Desktop Interface with Cool Palette](assets/screenshots/desktop_cool.png)
+- **Forest Green Palette:**
+  ![Desktop Interface with Forest Palette](assets/screenshots/desktop_forest.png)
 
-### Desktop Interface (Cool Palette)
-![Desktop Interface with Cool Palette](assets/screenshots/desktop_cool.png)
+### 2.2 Shell Drawers and Navigation
+- **Application Launcher Grid:**
+  ![Caelestia Application Launcher](assets/screenshots/launcher_grid.png)
+- **Quick Settings and Utilities Flyout:**
+  ![Quick Settings and Utilities](assets/screenshots/utilities_quick_settings.png)
+- **Notification Sidebar:**
+  ![Notification Sidebar](assets/screenshots/sidebar_notifications.png)
+- **Clipboard History Manager:**
+  ![Clipboard History Manager](assets/screenshots/clipboard_manager.png)
 
-### Application Launcher
-![Caelestia Application Launcher](assets/screenshots/launcher_grid.png)
+### 2.3 Media Subsystem
+- **Media Dashboard with Synced Lyrics:**
+  ![Media Dashboard](assets/screenshots/media_dashboard.png)
+- **Spotify with Spicetify Theming:**
+  ![Spotify with Spicetify](assets/screenshots/spotify_spicetify.png)
 
-### Terminal and System Information
-![Kitty Terminal with Fastfetch](assets/screenshots/terminal_fastfetch.png)
+### 2.4 Terminal and System Utilities
+- **Kitty Terminal with Starship and Fastfetch:**
+  ![Kitty Terminal with Fastfetch](assets/screenshots/terminal_fastfetch.png)
+- **Btop System Monitor:**
+  ![Btop System Monitor](assets/screenshots/terminal_btop.png)
+- **Yazi Terminal File Manager:**
+  ![Yazi File Manager](assets/screenshots/terminal_yazi.png)
 
-### SDDM Login Greeter
-![Material You SDDM Greeter](assets/screenshots/sddm_greeter.png)
+### 2.5 System Configuration and Greeter
+- **Nexus Settings Control Center:**
+  ![Nexus Settings Panel](assets/screenshots/nexus_settings.png)
+- **SDDM Login Greeter (Idle State):**
+  ![Material You SDDM Greeter](assets/screenshots/sddm_greeter.png)
 
 ---
 

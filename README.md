@@ -45,8 +45,10 @@ A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Cae
 ### 2.3 Media Subsystem
 - **Media Dashboard with Synced Lyrics:**
   ![Media Dashboard](assets/screenshots/media_dashboard.png)
-- **Spotify with Spicetify Theming:**
-  ![Spotify with Spicetify](assets/screenshots/spotify_spicetify.png)
+- **Spotify with System Palette:**
+  ![Spotify with Spicetify System Colors](assets/screenshots/spotify_spicetify.png)
+- **Spotify with Dynamic Song Colors:**
+  ![Spotify with Dynamic Song Colors](assets/screenshots/spotify_song_colors.png)
 
 ### 2.4 Terminal and Shell
 - **Kitty Terminal with Starship and Fastfetch:**

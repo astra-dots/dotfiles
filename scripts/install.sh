@@ -6,7 +6,12 @@
 
 set -euo pipefail
 
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+if [ "$(basename "$SCRIPT_DIR")" = "scripts" ]; then
+    DOTFILES_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+else
+    DOTFILES_DIR="$SCRIPT_DIR"
+fi
 BACKUP_DIR="${HOME}/.dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 # Colors

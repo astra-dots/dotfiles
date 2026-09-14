@@ -38,10 +38,6 @@ A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Cae
   ![Caelestia Application Launcher](assets/screenshots/launcher_grid.png)
 - **Quick Settings and Utilities Flyout:**
   ![Quick Settings and Utilities](assets/screenshots/utilities_quick_settings.png)
-- **Notification Sidebar:**
-  ![Notification Sidebar](assets/screenshots/sidebar_notifications.png)
-- **Clipboard History Manager:**
-  ![Clipboard History Manager](assets/screenshots/clipboard_manager.png)
 
 ### 2.3 Media Subsystem
 - **Media Dashboard with Synced Lyrics:**
@@ -49,13 +45,9 @@ A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Cae
 - **Spotify with Spicetify Theming:**
   ![Spotify with Spicetify](assets/screenshots/spotify_spicetify.png)
 
-### 2.4 Terminal and System Utilities
+### 2.4 Terminal and Shell
 - **Kitty Terminal with Starship and Fastfetch:**
   ![Kitty Terminal with Fastfetch](assets/screenshots/terminal_fastfetch.png)
-- **Btop System Monitor:**
-  ![Btop System Monitor](assets/screenshots/terminal_btop.png)
-- **Yazi Terminal File Manager:**
-  ![Yazi File Manager](assets/screenshots/terminal_yazi.png)
 
 ### 2.5 System Configuration and Greeter
 - **Nexus Settings Control Center:**
@@ -191,6 +183,12 @@ For in-depth guides, refer to the `docs/` directory:
 
 ---
 
-## 8. License
+## 8. AI Development Assistance
+
+The system configurations, technical customizations, automation scripts, and documentation in this repository were created, adapted, and refined with the assistance of AI Large Language Models (LLMs).
+
+---
+
+## 9. License
 
 This repository is distributed under the GNU General Public License v3.0. Refer to [LICENSE](LICENSE) and [CREDITS.md](CREDITS.md) for full details.

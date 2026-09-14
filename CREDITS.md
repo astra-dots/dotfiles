@@ -47,3 +47,9 @@ The wallpapers shown in documentation screenshots are credited to their respecti
 - Jeremy Bishop
 - Marek Piwnicki
 - Daniel Leone
+
+---
+
+## 4. AI Development Assistance
+
+System configurations, technical refinements, automated deployment scripts, and ASD-STE100 technical documentation were authored, organized, and refined with the assistance of AI Large Language Models (LLMs).

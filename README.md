@@ -1,118 +1,173 @@
-<div align="center">
+# Astra Dots
 
-# 🌌 Astra Dots
-
-**My personal Material Design 3 rice on Arch Linux + KDE Plasma 6 + Caelestia Quickshell**
-
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?logo=arch-linux&logoColor=fff&style=flat-square)](https://archlinux.org)
-[![KDE Plasma](https://img.shields.io/badge/KDE_Plasma-6.4-1D99F3?logo=kde&logoColor=fff&style=flat-square)](https://kde.org/plasma-desktop/)
-[![Quickshell](https://img.shields.io/badge/Shell-Quickshell-7B1FA2?style=flat-square)](https://quickshell.outfoxxed.me)
-[![Caelestia](https://img.shields.io/badge/Fork-Caelestia_KDE-00ACC1?style=flat-square)](https://github.com/astra-dots/caelestia-kde)
-[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-
-[**Live Showcase**](https://astra-dots.github.io) • [**Caelestia Fork**](https://github.com/astra-dots/caelestia-kde) • [**Installation**](#-installation) • [**Keybinds**](#-keybinds)
-
-</div>
+A technical configuration repository for Arch Linux, KDE Plasma 6.4, and the Caelestia Quickshell desktop shell.
 
 ---
 
-## 🖥 System Overview
+## 1. System Specifications
 
-| Component | Software / Details |
+| Item | Specification |
 | :--- | :--- |
-| **Operating System** | [Arch Linux](https://archlinux.org/) (Linux Kernel 6.13) |
+| **Operating System** | Arch Linux (Linux Kernel 6.13) |
 | **Display Server** | Wayland |
-| **Desktop Environment** | [KDE Plasma 6.4](https://kde.org/) |
-| **Desktop Shell** | [Caelestia Quickshell Fork](https://github.com/astra-dots/caelestia-kde) |
-| **Login Greeter** | [Material You SDDM](sddm/material-you-caelestia) (Google Sans Flex, Vector Popups, CapsLock Sync) |
-| **Terminal Emulator** | [Kitty](config/kitty) |
-| **Shell & Prompt** | Zsh + [Starship](config/starship.toml) |
-| **Color Engine** | [Matugen](config/matugen) (Material 3 dynamic palettes from wallpaper) |
-| **Audio Routing** | PipeWire + WirePlumber |
-| **Music Player** | Spotify + [Spicetify](config/spicetify) (Synced Lyrics + Matugen theming) |
-| **File Managers** | Dolphin (GUI) + [Yazi](config/yazi) (CLI) |
-| **System Monitor** | [Btop](config/btop) |
+| **Desktop Environment** | KDE Plasma 6.4 |
+| **Desktop Shell** | Quickshell (Fork: [astra-dots/caelestia-kde](https://github.com/astra-dots/caelestia-kde)) |
+| **Login Greeter** | SDDM (Custom Material You theme with Google Sans Flex) |
+| **Terminal Emulator** | Kitty |
+| **Shell and Prompt** | Zsh and Starship |
+| **Color Extraction** | Matugen (Material Design 3 algorithmic palette) |
+| **Audio Subsystem** | PipeWire with WirePlumber device deduplication |
+| **Media Player** | Spotify with Spicetify and synchronized lyric visualizer |
+| **System Monitor** | Btop |
+| **File Manager** | Dolphin (GUI) and Yazi (CLI) |
 
 ---
 
-## ⌨ Keybinds
+## 2. Visual Overview
 
-| Shortcut | Action | Description |
+### Desktop Interface (Warm Palette)
+![Desktop Interface with Warm Palette](assets/screenshots/desktop_warm.png)
+
+### Desktop Interface (Cool Palette)
+![Desktop Interface with Cool Palette](assets/screenshots/desktop_cool.png)
+
+### Application Launcher
+![Caelestia Application Launcher](assets/screenshots/launcher_grid.png)
+
+### Terminal and System Information
+![Kitty Terminal with Fastfetch](assets/screenshots/terminal_fastfetch.png)
+
+### SDDM Login Greeter
+![Material You SDDM Greeter](assets/screenshots/sddm_greeter.png)
+
+---
+
+## 3. Global Shortcuts
+
+| Shortcut | Command / Target | Description |
 | :--- | :--- | :--- |
-| `Super + D` | **Show Desktop** | Toggle minimization of all windows to view desktop (with active indicator) |
-| `Super` | **App Launcher** | Caelestia Material 3 application grid & search |
-| `Super + Enter` | **Terminal** | Open Kitty terminal emulator |
-| `Super + Tab` | **Overview** | Interactive window grid & virtual desktops |
-| `Super + B` | **Notification Center** | Toggle right sidebar with notifications & calendar |
-| `Super + V` | **Clipboard History** | Material 3 search and snippet history |
-| `Super + Shift + S` | **Screenshot** | Interactive region selector & instant annotation |
-| `Super + Shift + C` | **Color Picker** | Eyedropper tool copying hex & rgb to clipboard |
-| `Super + Ctrl + S` | **Screen Record** | Fast GPU screen recorder toggle |
-| `Super + 1-5` | **Workspaces** | Switch to virtual desktop 1 through 5 |
+| `Super + D` | `Show Desktop` | Toggle window minimization to view desktop. Shows active indicator. |
+| `Super` | `caelestia shell drawers toggle launcher` | Open or close the application launcher. |
+| `Super + Enter` | `kitty` | Start a terminal window. |
+| `Super + Tab` | `KWin Overview` | Open the window overview grid. |
+| `Super + B` | `caelestia shell drawers toggle sidebar` | Open or close the notification sidebar. |
+| `Super + V` | `caelestia clipboard` | Open the clipboard history manager. |
+| `Super + Shift + S` | `caelestia screenshot` | Select a screen region and take a screenshot. |
+| `Super + Shift + C` | `caelestia colorpicker` | Start the color picker tool. |
+| `Super + Ctrl + S` | `caelestia record` | Start or stop screen recording. |
+| `Super + 1` to `5` | `KWin Workspace 1-5` | Switch to virtual desktop 1 through 5. |
 
 ---
 
-## 🚀 Installation
+## 4. Installation Procedure
 
-### 1. Clone the repository
+### 4.1 Prerequisites
+Install the required packages on Arch Linux before deploying:
+```bash
+sudo pacman -S --needed git zsh kitty btop fastfetch pipewire wireplumber sddm
+yay -S --needed quickshell-git matugen-bin spicetify-cli
+```
+
+### 4.2 Clone and Deploy
+Clone this repository to your home directory:
 ```bash
 git clone https://github.com/astra-dots/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-```
-
-### 2. Run the non-destructive installer
-```bash
 chmod +x install.sh
 ./install.sh
 ```
-> The installer automatically detects existing configurations and backs them up into `~/.dotfiles_backup_<timestamp>/` before creating safe symlinks.
 
-### 3. Deploy the custom Material You SDDM theme
+The installer script completes these steps:
+1. Detects existing configuration files in `~/.config` and `~/.local`.
+2. Moves conflicting files to a timestamped backup directory: `~/.dotfiles_backup_<timestamp>/`.
+3. Creates symbolic links from `~/dotfiles` to target locations.
+
+### 4.3 Install the SDDM Theme
+To install the SDDM theme to the system directory, execute:
 ```bash
 sudo cp -r ~/dotfiles/sddm/material-you-caelestia /usr/share/sddm/themes/
 ```
 
-### 4. Sync live changes back to the repository
+Verify the theme in test mode:
+```bash
+/usr/bin/sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/material-you-caelestia
+```
+
+---
+
+## 5. Synchronization Tool
+
+Use the `sync.sh` script to manage changes between the live system and the repository.
+
+### Check Status
+Display file differences:
+```bash
+./sync.sh status
+```
+
+### Save System Changes
+Copy updated system files into the repository and commit:
 ```bash
 ./sync.sh push
 ```
 
----
-
-## 📂 Repository Structure
-
-```text
-dotfiles/
-├── config/
-│   ├── caelestia/          # shell.json user preferences & active toggles
-│   ├── kitty/              # Kitty terminal configuration & color schemes
-│   ├── fastfetch/          # Custom Fastfetch layout & specs format
-│   ├── starship.toml       # Cross-shell prompt configuration
-│   ├── matugen/            # Material Design 3 color extractor config & templates
-│   ├── spicetify/          # Spotify client theme & extensions
-│   ├── btop/               # System monitor theme & layout
-│   ├── yazi/               # Blazing fast terminal file manager config
-│   └── wireplumber/        # PipeWire device rules & audio routing
-├── home/
-│   └── .zshrc              # Zsh interactive shell configuration
-├── kde/
-│   ├── kglobalshortcutsrc  # Global shortcuts (Win+D, launcher, workspaces)
-│   ├── kwinrc              # KWin window manager settings & desktop effects
-│   └── kdeglobals          # Plasma system fonts, icons, and theme values
-├── sddm/
-│   └── material-you-caelestia/ # Complete custom SDDM theme
-├── scripts/
-│   ├── install.sh          # Non-destructive interactive installer
-│   └── sync.sh             # Bidirectional sync helper (system <-> repo)
-├── .gitignore              # Aggressive ignore list preventing any cache/secret leakage
-└── README.md
+### Pull Remote Updates
+Download updates from GitHub and refresh links:
+```bash
+./sync.sh pull
 ```
 
 ---
 
-## 📜 Credits
+## 6. Repository Architecture
 
-- [Caelestia](https://github.com/caelestia-dots/caelestia) & [Caelestia KDE Port](https://github.com/ladybug-me/caelestia-kde) by ladybug-me & 0xSolanaceae.
-- [Quickshell](https://quickshell.outfoxxed.me) by outfoxxed.
-- [Matugen](https://github.com/InioX/matugen) by InioX.
-- [Spicetify](https://spicetify.app/) by Spicetify team.
+```text
+dotfiles/
+├── assets/
+│   └── screenshots/        # High-resolution system screenshots
+├── config/
+│   ├── btop/               # System monitor theme and layout
+│   ├── caelestia/          # Shell user configuration (shell.json)
+│   ├── fastfetch/          # System information layout (config.jsonc)
+│   ├── kitty/              # Terminal configuration and themes
+│   ├── matugen/            # Material Design 3 templates and settings
+│   ├── spicetify/          # Spotify player styling and extensions
+│   ├── starship.toml       # Cross-shell prompt configuration
+│   ├── wireplumber/        # Audio device configuration rules
+│   └── yazi/               # Terminal file manager configuration
+├── docs/                   # Detailed technical documentation
+│   ├── components.md       # Component breakdown and architecture
+│   ├── installation.md     # Step-by-step setup instructions
+│   ├── keybinds.md         # Complete keyboard shortcut table
+│   └── troubleshooting.md  # Common issues and diagnostic commands
+├── home/
+│   └── .zshrc              # Interactive Zsh shell configuration
+├── kde/
+│   ├── kdeglobals          # Plasma color schemes, icons, and fonts
+│   ├── kglobalshortcutsrc  # Global keyboard shortcut definitions
+│   └── kwinrc              # Window manager behavior and effects
+├── scripts/
+│   ├── install.sh          # Non-destructive deployment script
+│   └── sync.sh             # Bidirectional synchronization script
+├── sddm/
+│   └── material-you-caelestia/ # SDDM greeter theme with Google Sans Flex
+├── CREDITS.md              # Upstream author credits and licenses
+├── LICENSE                 # GNU General Public License v3.0
+└── README.md               # Main documentation entry point
+```
+
+---
+
+## 7. Documentation Index
+
+For in-depth guides, refer to the `docs/` directory:
+- [Installation Guide](docs/installation.md)
+- [Keybindings Reference](docs/keybinds.md)
+- [Component Architecture](docs/components.md)
+- [Troubleshooting and Diagnostic Commands](docs/troubleshooting.md)
+
+---
+
+## 8. License
+
+This repository is distributed under the GNU General Public License v3.0. Refer to [LICENSE](LICENSE) and [CREDITS.md](CREDITS.md) for full details.
